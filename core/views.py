@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DeleteView
+from django.views.generic import ListView, UpdateView, CreateView, DeleteView
 from .models import Viewing, Booking
 from .forms import BookingForm
-from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
 
 class HomeView(ListView):
     model = Viewing
@@ -12,13 +12,18 @@ class BookingView(ListView):
     model = Booking
     template_name = 'bookings.html'
 
-def create_booking(request):
+class CreateBookingView(CreateView):
+    model = Booking
+    form_class = BookingForm
+    template_name = 'create_booking.html'
 
-    if request.method == "POST":
-        form = BookingForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/')
+class UpdateBookingView(UpdateView):
+    model = Booking
+    template_name = 'update_booking.html'
+    fields = ['film', 'qty']
 
-    form = BookingForm
-    return render(request, 'create_booking.html', {'form':form})
+class DeleteBookingView(DeleteView):
+    model = Booking
+    template_name = 'delete_booking.html'
+    success_url = reverse_lazy('bookings')
+ 

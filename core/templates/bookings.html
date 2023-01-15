@@ -3,11 +3,13 @@
 {% block content %}
 
 <div class="container pt-3">
-      <h3>Bookings</h3>
+      <h3>My bookings</h3>
       <ul>
         {% for booking in object_list %}
 
         <li>{{ booking.film }} - {{ booking.customer }} - {{ booking.qty }}</li>
+        <a href = "{% url 'update_booking' booking.pk %}">Edit booking</a>
+        <a href = "{% url 'delete_booking' booking.pk %}">Delete booking</a>
 
         {% endfor %}
       </ul>

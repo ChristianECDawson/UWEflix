@@ -1,6 +1,7 @@
 from django.db import models
 import datetime
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 class Screen(models.Model):
     number = models.IntegerField()
@@ -32,3 +33,6 @@ class Booking(models.Model):
      film = models.ForeignKey(Film, default=1, on_delete=models.CASCADE)
      customer = models.ForeignKey(User, on_delete=models.CASCADE)
      qty = models.IntegerField()
+
+     def get_absolute_url(self):
+        return reverse('bookings')
