@@ -20,7 +20,7 @@ class CreateBookingView(CreateView):
 class UpdateBookingView(UpdateView):
     model = Booking
     template_name = 'update_booking.html'
-    fields = ['film', 'qty']
+    fields = '__all__'
 
 class DeleteBookingView(DeleteView):
     model = Booking

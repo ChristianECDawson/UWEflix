@@ -28,9 +28,11 @@ class Viewing(models.Model):
     film = models.ForeignKey(Film, default=1, on_delete=models.CASCADE)
     start_time = models.TimeField(default=datetime.time(20,00))
 
+    def __str__(self):
+        return f'{self.film} {self.start_time}'
 
 class Booking(models.Model):
-     film = models.ForeignKey(Film, default=1, on_delete=models.CASCADE)
+     viewing = models.ForeignKey(Viewing, default=1, on_delete=models.CASCADE)
      customer = models.ForeignKey(User, on_delete=models.CASCADE)
      qty = models.IntegerField()
 
