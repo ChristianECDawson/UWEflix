@@ -1,16 +1,8 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{% static 'core/css/bootstrap.css'%}"
-/>
 
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1">Navbar</span>
-  </div>
-</nav>
+{% block content %}
+
 
 <div class="container pt-3">
   <div class="row">
@@ -18,12 +10,18 @@
       <h3>Viewings</h3>
       <ul>
         {% for viewing in object_list %}
-        
+
         <li>{{ viewing.film }} - {{ viewing.start_time }}</li>
 
         {% endfor %}
       </ul>
     </div>
-    <div class="col-4">Sidebar</div>
+    <div class="col-4">
+      <h3>Bookings</h3>
+      
+      </ul>
+    </div>
   </div>
 </div>
+
+{% endblock %}

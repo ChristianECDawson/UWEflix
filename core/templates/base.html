@@ -1,0 +1,23 @@
+{% load static %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'core/css/bootstrap.css'%}"
+/>
+
+<header>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Navbar</span>
+    </div>
+  </nav>
+</header>
+
+<body>
+
+    {% block content %}
+
+    {% endblock %}
+    
+</body>

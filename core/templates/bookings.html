@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container pt-3">
+      <h3>Bookings</h3>
+      <ul>
+        {% for booking in object_list %}
+
+        <li>{{ booking.film }} - {{ booking.customer }} - {{ booking.qty }}</li>
+
+        {% endfor %}
+      </ul>
+</div>
+
+{% endblock %}
