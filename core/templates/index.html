@@ -1,1 +1,20 @@
-Hello Docker
+{% load static %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'core/css/bootstrap.css'%}"
+/>
+
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Navbar</span>
+    </div>
+  </nav>
+
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-8">UWEflix</div>
+    <div class="col-4">Sidebar</div>
+  </div>
+</div>
