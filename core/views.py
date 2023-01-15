@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.views.generic import ListView, UpdateView, CreateView, DeleteView
 from .models import Viewing, Booking
 from .forms import BookingForm
