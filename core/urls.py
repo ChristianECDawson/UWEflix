@@ -5,5 +5,6 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home)
+    path('', views.HomeView.as_view()),
+    path('create_booking', views.create_booking, name='create_booking')
 ]

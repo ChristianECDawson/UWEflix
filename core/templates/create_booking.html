@@ -1,0 +1,19 @@
+{% load static %}
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'core/css/bootstrap.css'%}"
+/>
+
+<div class="container">
+  <h3>Booking</h3>
+  <form action="" method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value="Submit" class="btn btn-secondary"/>
+
+  </form>
+</div>
